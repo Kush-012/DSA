@@ -1,1 +1,48 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Queue q=new Queue();
+      q.Enqueue(44);
+      q.Enqueue(444);
+      q.Enqueue(4);
+      q.Enqueue(4444);
+      q.display();
+  }
+}
+
+class Queue{
+  List<Integer>l;
+  Queue(){
+  l=new ArrayList<>();
+  }
+  
+  public void Enqueue(int d){
+    l.add(d);
+  }
+  
+  public void Dequeue(){
+    if(l.size()==0){
+      return;
+    } 
+    l.remove(0);
+  } 
+  
+  public int front(){
+    return l.get(0);
+  }
+  public boolean isEmpty(){
+    return l.size()==0;
+  }
+  
+  public void display(){
+    while(!isEmpty()){
+      System.out.print(front()+" ");
+      Dequeue();
+    }
+    
+  }
+  
+  
+}
 
