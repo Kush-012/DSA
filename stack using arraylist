@@ -1,0 +1,47 @@
+import java.util.*;
+
+class Main{
+  
+    public static void main(String[] args) {
+     Stack s=new Stack();
+     s.push(44);
+     s.push(33);
+     s.push(22);
+     s.push(11);
+     while(!s.isEmpty()){
+       System.out.print(s.peek()+" ");
+       s.pop();
+     }
+    }
+}
+
+class Stack{
+  List<Integer>l=new ArrayList<>();
+  
+  public void push(int d){
+    l.add(d);
+  }
+  
+  public boolean isEmpty(){
+    if(l.size()==0){
+      return true;
+    }
+    return false;
+  }
+  
+  public int pop(){
+  if(isEmpty()){
+    return -1;
+  }  
+  return l.remove(l.size()-1);
+  }
+  
+  public int peek(){
+    if(isEmpty()){
+      return -1;
+    }
+    return l.get(l.size()-1);
+  }
+  
+  
+}
