@@ -1,0 +1,60 @@
+import java.util.*;
+
+public class stack {
+    static class LinkList {
+        int val;
+        LinkList next;
+
+        LinkList(int d) {
+            val = d;
+            next = null;
+        }
+    }
+
+    static class imp {
+        static LinkList head;
+
+        public static boolean isEmpty() {
+            return head == null;
+        }
+
+        public static void push(int d) {
+            LinkList n = new LinkList(d);
+            if (isEmpty()) {
+                head = n;
+            } else {
+                n.next = head;
+                head = n;
+            }
+        }
+
+        public static int pop() {
+            if (isEmpty()) {
+                return -1;
+            } else {
+                int top = head.val;
+                head = head.next;
+                return top;
+            }
+        }
+
+        public static int peek() {
+            if (isEmpty()) {
+                return -1;
+            }
+            return head.val;
+        }
+    }
+
+    public static void main(String[] args) {
+        imp.push(3);
+        imp.push(2);
+        imp.push(8);
+        imp.push(9);
+
+        while (!imp.isEmpty()) {
+            System.out.println(imp.peek());
+            imp.pop();
+        }
+    }
+}
