@@ -1,7 +1,16 @@
 import java.util.*;
 
-public class stack {
-    static class LinkList {
+class Main{
+    public static void main(String[] args) {
+        Stack s=new Stack();
+        s.push(3);
+        s.push(2);
+        s.push(8);
+        s.push(9);
+       s.display();
+    }
+} 
+    class LinkList {
         int val;
         LinkList next;
 
@@ -11,14 +20,14 @@ public class stack {
         }
     }
 
-    static class imp {
-        static LinkList head;
+     class Stack {
+      LinkList head;
 
-        public static boolean isEmpty() {
+        public boolean isEmpty() {
             return head == null;
         }
 
-        public static void push(int d) {
+        public  void push(int d) {
             LinkList n = new LinkList(d);
             if (isEmpty()) {
                 head = n;
@@ -28,7 +37,7 @@ public class stack {
             }
         }
 
-        public static int pop() {
+        public  int pop() {
             if (isEmpty()) {
                 return -1;
             } else {
@@ -38,23 +47,17 @@ public class stack {
             }
         }
 
-        public static int peek() {
+        public  int peek() {
             if (isEmpty()) {
                 return -1;
             }
             return head.val;
         }
-    }
-
-    public static void main(String[] args) {
-        imp.push(3);
-        imp.push(2);
-        imp.push(8);
-        imp.push(9);
-
-        while (!imp.isEmpty()) {
-            System.out.println(imp.peek());
-            imp.pop();
+        
+        public void display(){
+           while (!isEmpty()) {
+            System.out.println(peek());
+            pop();
         }
+        } 
     }
-}
