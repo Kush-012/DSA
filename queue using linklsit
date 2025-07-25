@@ -1,0 +1,62 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Queue q=new Queue();
+      q.Enqueue(33);
+      q.Enqueue(22);
+      q.Enqueue(11);
+      q.Dequeue();
+      q.display();
+      
+  }
+} 
+class Node{
+  int val;
+  Node next;
+  Node(int d){
+    next=null;
+    val=d;
+  }
+}
+class Queue{
+  Node front;
+  Node rear;
+  Queue(){
+    front=null;
+    rear=null;
+  } 
+  public void Enqueue(int d){
+    Node n=new Node(d);
+    if(front==null){
+      front=rear=n;
+    } 
+    else{
+      rear.next=n;
+      rear=n;
+    }
+  }
+  
+  public int Dequeue(){
+    if(front==null){
+      return -1;
+    }
+    int del=front.val;
+    front=front.next;
+    return del;
+    
+  }
+  public void display(){
+    if(front==null){
+      System.out.println("Queue is empty");
+      return;
+    }
+      Node temp;
+      temp=front;
+      while(temp!=null){
+        System.out.print(temp.val+" ");
+        temp=temp.next;
+      }
+  }
+  
+} 
+
