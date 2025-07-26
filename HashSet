@@ -1,0 +1,15 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      HashSet<Integer>h=new HashSet<>();
+      h.add(11);
+      h.add(22);
+      h.add(33);
+      if(h.contains(11)){
+        System.out.println("It contains 11");
+      }
+      System.out.println(h);
+      System.out.println(h.size());
+  }
+} 
