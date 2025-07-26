@@ -14,4 +14,8 @@ public class Main {
 
   }
 } 
-// note: hashset are store values in any order
+
+// note: hashset used to store values in any order
+// if you maintain insertion order use LinkedHashSet
+// if you maintain sorted order use TreeSet
+
