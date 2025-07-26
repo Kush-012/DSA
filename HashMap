@@ -13,6 +13,9 @@ public class Main {
          System.out.println("Great");
       }
       
+      h.put("Hello",h.getOrDefault("Hello", 0) + 3);
+       System.out.println(h.get("Hello"));
+
       System.out.println(h);
     for(Map.Entry<String,Integer> map:h.entrySet()){
        System.out.print(map.getKey()+" ");
@@ -21,3 +24,7 @@ public class Main {
     
   }
 } 
+// In hashMap, key can't be duplicate but value can be.
+// HashMap	        No order
+// LinkedHashMap	Maintains insertion order
+// TreeMap	        Keeps keys sorted 
