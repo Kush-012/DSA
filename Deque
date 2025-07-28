@@ -1,0 +1,19 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Deque<Integer>d=new ArrayDeque<>();
+      d.addFirst(11);
+      d.addFirst(12);
+      d.addLast(99);
+      d.addLast(98);
+      d.removeFirst();
+      d.removeLast();
+      System.out.println(d);
+       System.out.println("First element: "+d.peekFirst());
+       System.out.println("Last element:  "+d.peekLast());
+      for(int a:d){
+        System.out.println(a);
+      }
+  }
+} 
