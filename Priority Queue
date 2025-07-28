@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      PriorityQueue<Integer>p=new PriorityQueue<>();
+      p.add(54);
+      p.add(5);
+      p.add(2);
+      p.add(43);
+      p.add(4);
+      p.add(23);
+       System.out.print(p.peek()+"\n");
+      while(!p.isEmpty()){
+        System.out.print(p.poll()+" "); // it gives min heap using poll internally it not give in min heap using for loop
+      } 
+      
+  }
+} 
