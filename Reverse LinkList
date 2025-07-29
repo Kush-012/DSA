@@ -1,0 +1,64 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Reverse r=new Reverse();
+      r.add(2);
+      r.add(7);
+      r.add(5);
+      r.add(3);
+      Node head=r.reverse();
+      r.print(head);
+  }
+} 
+
+class Node{
+  int data;
+  Node next;
+  Node(int val){
+    data=val;
+  }
+}
+
+class Reverse{
+  Node head;
+  Reverse(){
+    head=null;
+  } 
+  
+    void add(int x){
+    Node n=new Node(x);
+    if(head==null){
+      head=n;
+    }
+    else{
+      Node temp=head;
+      while(temp.next!=null){
+        temp=temp.next;
+      }
+      temp.next=n;
+    }
+  } 
+  void print(Node hd){
+    Node temp=hd;
+    while(temp!=null){
+      System.out.print(temp.data+" ");
+      temp=temp.next;
+    }
+  }
+  
+  Node reverse(){
+    Node temp=null;
+    Node dup=head;
+    while(dup!=null){
+      Node nxt=dup.next;
+      dup.next=temp;
+      temp=dup;
+      
+      dup=nxt;
+    }
+    return temp;
+    
+  }
+  
+}
