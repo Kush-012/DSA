@@ -7,3 +7,8 @@ Selection Sort                  O(n²)      O(n²)      O(n²)
 Merge Sort                     O(log n)      O(log n)      O(log n) 
 Quick Sort                     O(log n)      O(log n)        O(n²)
 Heap Sort                     O(n log n)     O(n log n)    O(n log n)
+
+
+Worst case (O)  upper bound
+Best case (Ω)   lower bound
+Average case (Θ) average bound
