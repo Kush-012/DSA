@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+  public static void subsets(int arr[],List<Integer>l,int st,int sum,int s){
+    if(st>=arr.length){
+      if(sum==s)
+      System.out.println(l);
+      return;
+    }
+    l.add(arr[st]);
+    s+=arr[st];
+    subsets(arr,l,st+1,sum,s);
+    s-=arr[st];
+    l.remove(l.size()-1);
+    subsets(arr,l,st+1,sum,s);
+  } 
+    public static void main(String[] args) {
+      int []arr={3,2,1,5};
+      List<Integer>l=new ArrayList<>();
+      Scanner sc=new Scanner(System.in);
+      int sum=sc.nextInt();
+      subsets(arr,l,0,sum,0);
+  }
+}  
