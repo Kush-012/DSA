@@ -1,3 +1,5 @@
+// code for print sum=k subsets
+
 import java.util.*;
 
 public class Main {
