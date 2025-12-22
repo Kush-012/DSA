@@ -1,0 +1,80 @@
+You are given an m x n grid of uppercase English letters and a string word. Determine whether the word exists inside the grid in a straight line. The word must be formed by sequentially adjacent characters, where adjacency may be:
+
+Horizontal (left or right)
+Vertical (up or down)
+Diagonal (all four directions)
+All characters of the word must lie in the same straight direction, and each cell can be used at most once. If such a sequence exists, print "YES", otherwise print "NO".
+
+Input Format
+
+First line contains two integers m and n number of rows and columns.
+
+Next m lines each contain n uppercase characters without spaces, representing the board.
+
+The last line contains a string word.
+
+Constraints
+
+1 ≤ m, n ≤ 100 1 ≤ length(word) ≤ min(m, n) * 100 Characters are uppercase A–Z Each board cell may be used at most once
+
+Output Format
+
+YES if the word exists in a straight line, NO otherwise
+
+Sample Input 0
+
+3 4
+XABR
+CDEE
+MQPP
+MDB
+Sample Output 0
+
+YES
+
+
+import java.util.*;
+
+public class Main {
+  public static boolean func(int i,int j,int previ,int prevj,String str,String arr[],char c,int ind,int rows,int cols){
+    if(ind==str.length()){
+      return true;
+    }
+    if(i<0||i>=rows||j<0||j>=cols||arr[i].charAt(j)!=str.charAt(ind)){
+      return false;
+    }
+    if(ind==0)
+    { return(func(i+1,j,i,j,str,arr,c,ind+1,rows,cols)|| func(i-1,j,i,j,str,arr,c,ind+1,rows,cols)||
+            func(i,j-1,i,j,str,arr,c,ind+1,rows,cols) || func(i,j+1,i,j,str,arr,c,ind+1,rows,cols)|| 
+            func(i+1,j-1,i,j,str,arr,c,ind+1,rows,cols) || func(i+1,j+1,i,j,str,arr,c,ind+1,rows,cols)||
+            func(i-1,j-1,i,j,str,arr,c,ind+1,rows,cols) || func(i-1,j+1,i,j,str,arr,c,ind+1,rows,cols));
+    }
+    return func(i+(i-previ),j+(j-prevj),i,j,str,arr,c,ind+1,rows,cols);
+   
+  } 
+  
+  
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int rows=sc.nextInt();
+      int cols=sc.nextInt();
+      sc.nextLine();
+      String arr[]=new String[rows];
+      for(int i=0;i<rows;i++){
+        arr[i]=sc.nextLine();  
+      }
+      String str=sc.nextLine();
+      for(int i=0;i<rows;i++){
+        String c=arr[i];
+          for(int j=0;j<cols;j++){
+            if(func(i,j,i,j,str,arr,c.charAt(j),0,rows,cols)){
+              System.out.println("Yes");
+              return;
+            }
+          }  
+      }
+      System.out.println("No");
+      
+  }
+} 
+
