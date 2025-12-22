@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Integer arr[]={4,6,7,2};
+      Arrays.sort(arr,Collections.reverseOrder());
+      System.out.println(arr[0]);
+      
+      ArrayList<Integer>l=new ArrayList<>();
+      l.add(5);
+      l.add(3);
+      l.add(2);
+      Collections.sort(l,Collections.reverseOrder());
+       System.out.println(l.get(0));
+      
+      
+  }
+}
