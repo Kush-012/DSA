@@ -1,3 +1,5 @@
+// Bubble Sort pushes big numbers to the right, one by one.
+
 import java.util.*;
 
 public class Main {
