@@ -1,13 +1,16 @@
-Algorithms                      Best      Average     Worst
 
-Bubble Sort                     O(n)      O(n²)      O(n²)
-Insertion Sort                  O(n)      O(n²)      O(n²)
-Selection Sort                  O(n²)      O(n²)      O(n²)
+| Algorithm        | Best        | Average     | Worst       | Stable | In-Place |
+|------------------|-------------|-------------|-------------|--------|----------|
+| Bubble Sort      | O(n)        | O(n²)       | O(n²)       | Yes    | Yes      |
+| Insertion Sort   | O(n)        | O(n²)       | O(n²)       | Yes    | Yes      |
+| Selection Sort   | O(n²)       | O(n²)       | O(n²)       | No     | Yes      |
+| Merge Sort       | O(n log n)  | O(n log n)  | O(n log n)  | Yes    | No       |
+| Quick Sort       | O(n log n)  | O(n log n)  | O(n²)       | No     | Yes      |
+| Heap Sort        | O(n log n)  | O(n log n)  | O(n log n)  | No     | Yes      |
 
-Merge Sort                    O(n log n)     O(n log n)    O(n log n) 
-Quick Sort                    O(n log n)     O(n log n)    O(n²)
-Heap Sort                     O(n log n)     O(n log n)    O(n log n)
-
+=> stable means relative order of elements not change
+=> inplace means no extra space required
+=> Quick sort is best
 
 Worst case (O)  upper bound
 Best case (Ω)   lower bound
