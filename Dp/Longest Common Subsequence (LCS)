@@ -1,1 +1,26 @@
+class Lcs {
+    public static int func(int i,int j,String s1,String s2,Integer dp[][]){
+        if(i<0 || j<0){
+            return 0;
+        } 
+        if(dp[i][j]!=null)
+            return dp[i][j];
+        int take=Integer.MIN_VALUE;
+        int nottake=Integer.MIN_VALUE;
+        if(s1.charAt(i)==s2.charAt(j)){
+            take=1+func(i-1,j-1,s1,s2,dp);
+        }
+        else{
+            nottake=Math.max(func(i-1,j,s1,s2,dp),func(i,j-1,s1,s2,dp));
+        }
+        return dp[i][j]=Math.max(take,nottake);
+    } 
+    public static int longestCommonSubsequence(String text1, String text2) {
+        Integer dp[][]=new Integer[text1.length()][text2.length()];
+        return func(text1.length()-1,text2.length()-1,text1,text2,dp);
+    }
+    public static void main(String[]args){
+        System.out.print(longestCommonSubsequence("pool","poll"));
+    } 
+} 
 
