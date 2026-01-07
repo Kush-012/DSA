@@ -1,1 +1,24 @@
-
+class Solution {
+    static Integer dp[][];
+    public static int func(int W, int val[], int wt[],int ind){
+        if(ind==wt.length){
+            return 0;
+        } 
+        if(dp[ind][W]!=null){
+            return dp[ind][W];
+        } 
+        int take=0;
+        if(wt[ind]<=W){
+            take=val[ind]+func(W-wt[ind],val,wt,ind+1);
+        } 
+        int nottake=0+func(W,val,wt,ind+1);
+        return dp[ind][W]=Math.max(take,nottake);
+    } 
+    public static int knapsack(int W, int val[], int wt[]) {
+        dp=new Integer[wt.length][W+1]; 
+        return func(W,val,wt,0);
+    }
+    public static void main(String[]args){
+      System.out.println(knapsack(4,new int[]{4,5,6,3},new int[]{33,5,66,2}));
+    }
+}      
