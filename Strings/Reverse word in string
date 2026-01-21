@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String s="This is LPU";
+      StringBuilder str=new StringBuilder("");
+      StringBuilder rev=new StringBuilder("");
+      for(int i=s.length()-1;i>=0;i--){
+        if(s.charAt(i)!=' '){
+          str.append(s.charAt(i));
+        }
+        else{
+          rev.append(str.reverse());
+          rev.append(" ");
+          str=new StringBuilder("");
+        }
+        
+      }
+      rev.append(str.reverse());
+      System.out.println(rev);
+      
+  }
+} 
