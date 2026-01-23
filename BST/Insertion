@@ -1,1 +1,51 @@
+import java.util.*;
 
+public class Main {
+    public static void main(String[] args) {
+     Node root=null;
+     BST b=new BST();
+      root=b.insert(root,3);
+      root=b.insert(root,4);
+      root=b.insert(root,5);
+      root=b.insert(root,7);
+     b.inorder(root);
+     
+  }
+} 
+
+class Node {
+    int data;
+    Node left, right;
+
+    Node(int value) {
+        data = value;
+        left = right = null;
+    }
+}
+
+class BST{
+  Node insert(Node root,int n){
+    Node nd=new Node(n);
+    if(root==null){
+      return new Node(n);
+    }
+    else if(n<root.data){
+      root.left=insert(root.left,n);
+    }
+    else if(root.data<n){
+      root.right=insert(root.right,n);
+    }
+    return root;
+  }
+  
+  void inorder(Node root){
+    if(root==null){
+      return;
+    }
+    inorder(root.left);
+    System.out.print(root.data+" ");
+    inorder(root.right);
+  }
+  
+  
+}
