@@ -1,0 +1,37 @@
+class Solution {
+    public boolean func(int k,int piles[],int h) {
+        for(int i=0;i<piles.length;i++){
+            int x=piles[i]%k;
+            int y=piles[i]/k;
+            h-=y;
+            if(x!=0){
+                h--;
+            }
+        } 
+        if(h>=0){
+            return true;
+        }
+        return false;
+    } 
+
+    public int minEatingSpeed(int[] piles, int h) {
+        int left = 1;
+        int right = Integer.MIN_VALUE;
+        for (int i = 0; i < piles.length; i++) {
+            right = Math.max(piles[i], right);
+        }
+        int ans=0;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if(func(mid, piles, h)){
+                right=mid-1;
+                ans=mid;
+            }
+            else{
+                left=mid+1;
+            } 
+        }
+        return ans;
+
+    }
+} 
