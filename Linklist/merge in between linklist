@@ -1,0 +1,23 @@
+class Solution {
+    public ListNode mergeInBetween(ListNode list1, int a, int b, ListNode list2) {
+        int var=0;
+        ListNode temp=list1;
+        while(var<a-1 && a!=0){
+            temp=temp.next;
+            var++;
+        } 
+        ListNode temp2=list1;
+        var=0;
+        while(var<=b){
+            temp2=temp2.next;
+            var++;
+        } 
+        temp.next=list2;
+        while(list2.next!=null){
+            list2=list2.next;
+        }
+      
+        list2.next=temp2;
+        return list1;
+    }
+} 
