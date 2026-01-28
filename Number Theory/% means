@@ -1,0 +1,5 @@
+2%3=2
+it means remainder 2 is extra. 
+if we remove it then 2-2=0 it divisible by 3
+Or 3-(2%3) => diff is 1 add it to 2 it become 3 
+0,3,6 
