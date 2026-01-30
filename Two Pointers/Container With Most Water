@@ -1,0 +1,19 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int low=0;
+        int high=height.length-1;
+        int ans=0;
+        while(low<high){
+            int bdth=Math.min(height[low],height[high]);
+            int area=(high-low)*bdth;
+            ans=Math.max(ans,area);
+            if(height[low]<height[high]){
+                low++;
+            }
+            else{
+                high--;
+            }
+        }
+        return ans;
+    }
+} 
