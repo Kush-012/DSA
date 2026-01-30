@@ -1,0 +1,23 @@
+class Solution {
+    public void func(boolean visited[],ArrayList<Integer>l,ArrayList<ArrayList<Integer>> adj,int node){
+        visited[node]=true;
+        l.add(node);
+        ArrayList<Integer>h=adj.get(node);
+        for(int i:h){
+            if(!visited[i]){
+                func(visited,l,adj,i);
+            }
+        }
+        
+    } 
+    
+    public ArrayList<Integer> dfs(ArrayList<ArrayList<Integer>> adj) {
+        // code here
+        ArrayList<Integer>l=new ArrayList<>();
+        boolean visited[]=new boolean[adj.size()];
+        
+        func(visited,l,adj,0);
+        return l;
+        
+    }
+} 
