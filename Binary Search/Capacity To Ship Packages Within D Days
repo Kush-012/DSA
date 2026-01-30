@@ -1,0 +1,40 @@
+class Solution {
+    public boolean isvalid(int mid,int[] weights, int days){
+        int demo_days=1;
+        int val=0;
+        for(int i=0;i<weights.length;i++){
+            if(val+weights[i]>mid){
+                demo_days++;
+                val=weights[i];
+            }
+            else{
+            val+=weights[i];
+            }
+        }
+        if(demo_days>days){
+            return false;
+        }
+        return true;
+    } 
+    public int shipWithinDays(int[] weights, int days) {
+        int low=Integer.MIN_VALUE;
+        int sum=0;
+        for(int i=0;i<weights.length;i++){
+            low=Math.max(low,weights[i]);
+            sum+=weights[i];
+        } 
+        int ans=Integer.MAX_VALUE;
+        int high=sum;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if(isvalid(mid,weights,days)){
+                ans=Math.min(mid,ans);
+                high=mid-1;
+            }
+            else{
+                low=mid+1;
+            }
+        }
+        return ans;
+    }
+} 
