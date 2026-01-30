@@ -1,1 +1,30 @@
+import java.util.*;
 
+public class Main {
+    public static void main(String[] args) {
+      HashMap<String,Integer>h=new HashMap<>();
+      h.put("Hello",1);
+      h.put("Github",2);
+      h.put("Wala",3);
+      if(h.containsKey("Hello")){
+         System.out.println("Great");
+      }
+      if(h.containsValue(1)){
+         System.out.println("Great");
+      }
+      
+      h.put("Hello",h.getOrDefault("Hello", 0) + 3);
+       System.out.println(h.get("Hello"));
+
+      System.out.println(h);
+    for(Map.Entry<String,Integer> map:h.entrySet()){
+       System.out.print(map.getKey()+" ");
+        System.out.println(map.getValue());
+    }
+    
+  }
+} 
+// In hashMap, key can't be duplicate but value can be.
+// HashMap	        No order
+// LinkedHashMap	Maintains insertion order
+// TreeMap	        Keeps keys sorted 
