@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      String a="222";
+      int aa=Integer.parseInt(a);
+      System.out.println(aa);
+      String aaa=Integer.toString(aa); 
+      System.out.println(aaa);
+    } 
+} 
