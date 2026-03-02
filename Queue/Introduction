@@ -1,5 +1,6 @@
-import java.util.*;
+Queue: FIFO 
 
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
       Queue<Integer>q=new LinkedList<>();
@@ -7,5 +8,35 @@ public class Main {
       q.add(55);
       q.poll();
       System.out.println(q.peek());
+    }
+} 
+
+
+Priority Queue: Behave as Min heap
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      PriorityQueue<Integer>q=new PriorityQueue<>();
+      q.add(33);
+      q.add(55);
+      q.add(22);
+      q.poll();
+      System.out.println(q);
+    }
+} 
+
+
+Deque: Behave as both stack and queue
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      Deque<Integer>q=new ArrayDeque<>();
+      q.addFirst(33);
+      q.addFirst(55);
+      q.addLast(22);
+      q.removeFirst();
+      System.out.println(q);
     }
 } 
