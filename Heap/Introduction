@@ -1,0 +1,6 @@
+Heap is complete binary tree (binary tree: a tree in which a node can have atmost 2 child and CBT: level is filled from left to right).
+
+Types of heap:
+Min heap
+Max Heap
+
