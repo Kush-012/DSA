@@ -1,0 +1,29 @@
+import java.util.*;
+
+public class Main {
+  public static void heapify(int arr[],int n,int i){
+    int smallest=i;
+    int left=2*i+1;
+    int right=2*i+2;
+    if(left<n && arr[left]<arr[smallest]){
+      smallest=left;
+    }
+    if(right<n && arr[right]<arr[smallest]){
+      smallest=right;
+    }
+    if(smallest!=i){
+      int temp=arr[i];
+      arr[i]=arr[smallest];
+      arr[smallest]=temp;
+      heapify(arr,n,smallest);
+    }
+    
+  } 
+    public static void main(String[] args) {
+      int arr[]={3,5,6,6,4,2};
+      for(int i=0;i<arr.length;i++){
+        heapify(arr,6,i); 
+      }
+      System.out.println(arr[0]);
+    }
+}  
