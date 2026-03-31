@@ -1,0 +1,10 @@
+Binary search tree 
+=> left subtree less than root
+=> right subtree greater than root
+
+
+        50
+       /  \
+     30    70
+    / \    / \
+   20 40  60 80
