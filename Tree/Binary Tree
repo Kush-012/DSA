@@ -1,0 +1,39 @@
+Binary tree is a type of tree in which
+=> each node can have atmost 2 children (0,1,2)
+
+        A
+       / \
+      B   C        Full binary tree
+     / \ / \
+    D  E F  G
+
+        A               
+       / \               
+      B   C            Complete binary tree      (all level filled except last, filled from left to right)
+     / \  /
+    D  E F
+
+    A
+   /
+  B                    Left skewed
+ /                 
+C
+
+A
+ \
+  B                   Right skewed
+   \
+    C
+
+Traversals:
+
+1. DFS
+  i) pre order
+  ii) in order
+  iii) post order
+2. BFS
+
+n is vertices
+Total edges in binary tree=> n-1
+
+
