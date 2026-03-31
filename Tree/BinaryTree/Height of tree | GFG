@@ -1,0 +1,21 @@
+
+class Solution {
+    int h=0;
+    public void dfs(Node root,int demo){
+        if(root==null){
+            return;
+        }
+        demo++;
+        if(root.left==null && root.right==null){
+            h=Math.max(h,demo);
+        }
+        dfs(root.left,demo);
+        dfs(root.right,demo);
+    } 
+    public int height(Node root) {
+        
+        int demo=0;
+        dfs(root,demo);
+        return h-1;
+    }
+} 
