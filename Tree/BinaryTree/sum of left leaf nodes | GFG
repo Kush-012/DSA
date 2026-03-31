@@ -1,0 +1,20 @@
+class Solution {
+    int h=0;
+    public void dfs(Node root,Node parent){
+        if(root==null){
+            return;
+        } 
+        if(root.left==null && root.right==null){
+            if(parent!=null && parent.left==root){
+                h+=root.data; 
+            }
+        }
+        dfs(root.left,root);
+        dfs(root.right,root);
+    }  
+    public int leftLeavesSum(Node root) {
+        
+        dfs(root,null);
+        return h;
+    }
+}  
