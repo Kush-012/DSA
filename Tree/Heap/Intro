@@ -21,3 +21,9 @@ Max heap:
    30      40
   /  \    /
 10   20  35
+
+If index = i:
+
+Left child → 2*i + 1
+Right child → 2*i + 2
+Parent → (i - 1) / 2
