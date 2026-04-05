@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main {
+
+    // Heapify Up function
+    static void heapifyUp(ArrayList<Integer> l, int ind) {
+        while(ind>0){
+          int parent=(ind-1)/2;
+          if(l.get(parent)<l.get(ind)){
+            int temp=l.get(parent);
+            l.set(parent,l.get(ind));
+            l.set(ind,temp);
+            ind=parent;
+          }
+          else{
+            break;
+          }
+          
+          
+        }
+    }
+
+
+    public static void main(String[] args) {
+        ArrayList<Integer>l=new ArrayList<>();
+        l.add(2);
+        heapifyUp(l,l.size()-1);
+        l.add(8);
+        heapifyUp(l,l.size()-1);
+        l.add(9);
+        heapifyUp(l,l.size()-1);
+        l.add(3);
+        heapifyUp(l,l.size()-1);
+        System.out.println(l);
+    }
+} 
