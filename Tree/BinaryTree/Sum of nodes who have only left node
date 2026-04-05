@@ -1,0 +1,45 @@
+import java.util.*;
+
+class Node{
+int data;
+Node left;
+Node right;
+Node(int d){
+  data=d;
+  left=null;
+  right=null;
+}
+}
+
+public class Main {
+  int sum=0;
+    public void inorder(Node root){
+      if(root==null){
+        return;
+      }
+      inorder(root.left);
+      inorder(root.right);
+      if(root.left!=null && root.right==null){
+        sum+=root.data;
+      }
+    } 
+    public void main(String[] args) {
+      Node n=new Node(10);
+      n.left=new Node(5);
+      n.right=new Node(20);
+      n.left.left=new Node(3);
+      n.left.left.left=new Node(20);
+      inorder(n);
+      System.out.println(sum);
+    }
+}
+
+
+    //     10
+    //   /  \
+    //   5    20
+    // /
+  //  3
+//    /
+//    20
+
