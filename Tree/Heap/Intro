@@ -1,1 +1,23 @@
+Heap
+1. Complete Binary Tree:
+    All levels are filled except the last
+    Last level filled from left to right
 
+2. Heap Property:
+    Max Heap → Parent ≥ Children
+    Min Heap → Parent ≤ Children
+
+Min heap:
+       10
+     /    \
+   20      15
+  /  \    /
+30   40  50
+
+
+Max heap:
+       50
+     /    \
+   30      40
+  /  \    /
+10   20  35
