@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class Main {
+
+    // Heapify Down function
+    static void heapifyDown(ArrayList<Integer> heap, int size, int index) {
+        while (true) {
+            int left = 2 * index + 1;
+            int right = 2 * index + 2;
+            int largest = index;
+
+            // check left child
+            if (left < size && heap.get(left) > heap.get(largest)) {
+                largest = left;
+            }
+
+            // check right child
+            if (right < size && heap.get(right) > heap.get(largest)) {
+                largest = right;
+            }
+
+            // swap if needed
+            if (largest != index) {
+                int temp = heap.get(index);
+                heap.set(index, heap.get(largest));
+                heap.set(largest, temp);
+
+                index = largest; // move down
+            } else {
+                break;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> l = new ArrayList<>();
+        l.add(1);
+        l.add(9);
+        l.add(7);
+        l.add(2);
+
+        System.out.println("Before Deletion: " + l);
+        heapifyDown(l,l.size(),0);
+        System.out.println("After Deletion: " + l);
+    }
+}
+
+
