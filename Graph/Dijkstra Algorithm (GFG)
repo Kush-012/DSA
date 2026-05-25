@@ -41,3 +41,62 @@ class Solution {
         return dist;
     }
 }
+
+
+vs code code
+
+
+import java.util.*;
+
+class Pair{
+  int node;
+  int dist;
+  Pair(int node,int dist){
+    this.node=node;
+    this.dist=dist;
+  }
+}
+public class Main {
+  
+  public static void dijkstra(ArrayList<ArrayList<Pair>>l, int src, int V){
+    
+    PriorityQueue<Pair>pq=new PriorityQueue<>((a,b)->a.dist-b.dist);
+    int dist[]=new int[V];
+    Arrays.fill(dist,Integer.MAX_VALUE);
+    dist[src]=0;
+    pq.add(new Pair(src,0));
+    
+    while(!pq.isEmpty()){
+      Pair curr=pq.poll();
+      int n=curr.node;
+      for(Pair p:l.get(n)){
+        int neigh_node=p.node;
+        int neigh_dist=p.dist;
+        if(dist[n]+neigh_dist<dist[neigh_node]){
+          dist[neigh_node]=dist[n]+neigh_dist;
+          pq.add(new Pair(neigh_node,dist[neigh_node]));
+        }
+      }
+    }
+    
+    for(int i=0;i<V;i++){
+      System.out.println("Distance from 0 to "+i+" is "+dist[i]);
+    }
+    
+  }
+  
+  
+    public static void main(String[] args) {
+      ArrayList<ArrayList<Pair>>l=new ArrayList<>();
+      int V=4;
+      for(int i=0;i<V;i++){
+        l.add(new ArrayList<>());
+      }
+      l.get(0).add(new Pair(1,2));
+      l.get(0).add(new Pair(2,3));
+      l.get(1).add(new Pair(3,1));
+      l.get(2).add(new Pair(3,4));
+      dijkstra(l,0,V);
+      
+    }
+} 
