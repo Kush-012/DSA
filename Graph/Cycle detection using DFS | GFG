@@ -1,0 +1,49 @@
+class Solution {
+    public boolean cyclecheck(ArrayList<ArrayList<Integer>>adj, boolean visited[], boolean recpath[],int src){
+        visited[src]=true;
+        recpath[src]=true;
+        for(int i:adj.get(src)){
+            if(!visited[i]){
+                if(cyclecheck(adj,visited,recpath,i)){
+                    return true;
+                }
+            }
+            else if(recpath[i]){
+                return true;
+            }
+        }
+        recpath[src]=false;
+        return false;
+    } 
+    public boolean isCyclic(int V, int[][] edges) {
+        // code here
+        ArrayList<ArrayList<Integer>>adj=new ArrayList<>();
+        for(int i=0;i<V;i++){
+            adj.add(new ArrayList<>());
+        }
+        for(int i=0;i<edges.length;i++){
+            int i1=edges[i][0];
+            int i2=edges[i][1];
+            adj.get(i1).add(i2);
+        }
+        boolean visited[]=new boolean[V];
+        for(int i=0;i<V;i++){
+            visited[i]=false;
+        }
+         boolean recpath[]=new boolean[V];
+        for(int i=0;i<V;i++){
+            recpath[i]=false;
+        }
+        for (int i = 0; i < V; i++) {
+
+            if (!visited[i]) {
+
+                if (cyclecheck(adj, visited, recpath, i)) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+} 
