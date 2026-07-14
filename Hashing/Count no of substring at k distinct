@@ -1,0 +1,32 @@
+You are given a string s and a positive integer k.
+Return the number of substrings that contain exactly k distinct characters.
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      String s="pqpqs";
+      int k=2;
+      System.out.println(func(s,k)-func(s,k-1));
+    } 
+
+public static int func(String s,int k){
+      int c=0;
+      int l=0;
+      HashMap<Character,Integer>h=new HashMap<>();
+      for(int r=0;r<s.length();r++){
+        char ch=s.charAt(r);
+        h.put(ch,h.getOrDefault(ch,0)+1);
+        while(h.size()>k){
+          char cc=s.charAt(l);
+          h.put(cc,h.get(cc)-1);
+          if(h.get(cc)==0){
+            h.remove(cc);
+          }
+          l++;
+        }
+        c+=r-l+1;
+      }
+      return c;
+}   
+}
+
